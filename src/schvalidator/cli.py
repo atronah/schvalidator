@@ -66,7 +66,7 @@ def parsecli(cliargs=None):
     """
     from schvalidator import __version__
     version = "%s %s" % (__package__, __version__)
-    args = docopt(__doc__, argv=cliargs, version=version)
+    args = docopt(__doc__, argv=cliargs[1:], version=version)
     dictConfig(DEFAULT_LOGGING_DICT)
     log.setLevel(LOGLEVELS.get(args['-v'], logging.DEBUG))
 
